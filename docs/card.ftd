@@ -30,6 +30,10 @@ license-url: https://github.com/gsalunke/green-leaf-card/blob/main/LICENSE
 title: Software Developer
 phone-no: +123-4567890
 email: gsalunke@xyz.com
+c: green-leaf-card
 address: 123 Anywhere, Any City
 github: https://github.com/gsalunke/green-leaf-card
 sample-code: $green-leaf-card.front-sample-code
+logo: $assets.files.assets.ipsum-logo.svg
+website: www.johndoe.com
+qr-code: $assets.files.assets.qr-code.png

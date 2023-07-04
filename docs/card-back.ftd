@@ -29,3 +29,4 @@ package-full-name: gsalunke.github.io/green-leaf-card
 license-url: https://github.com/gsalunke/green-leaf-card/blob/main/LICENSE
 github: https://github.com/gsalunke/green-leaf-card
 sample-code: $green-leaf-card.back-sample-code
+c: green-leaf-card

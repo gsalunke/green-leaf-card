@@ -31,14 +31,27 @@ package-full-name: gsalunke.github.io/green-leaf-card
 license-url: https://github.com/gsalunke/green-leaf-card/blob/main/LICENSE
 title: Software Developer
 phone-no: +123-4567890
-email: gsalunke@xyz.com
+email: johndoe@xyz.com
 address: 123 Anywhere, Any City
 github: https://github.com/gsalunke/green-leaf-card
+c: green-leaf-card
+logo: $assets.files.assets.ipsum-logo.svg
+website: www.johndoe.com
+qr-code: $assets.files.assets.qr-code.png
 
 ;; ---------------- DEFINE YOUR CARD COMPONENTS -----------------------
 ;; Implement your card and card-back components below
 
-/-- component front:
+
+
+
+
+
+
+
+
+
+-- component front:
 caption name:
 optional string company-name:
 optional string title:
@@ -51,9 +64,123 @@ optional string company-slogan:
 optional ftd.image-src qr-code:
 optional string website:
 
-;; <YOUR IMPLEMENTATION HERE>
+-- ftd.column:
+width.fixed.px: 600
+height.fixed.px: 297
+spacing.fixed.px: 10
+padding-vertical.px: 34
+border-width.px: 1
+border-color: $inherited.colors.border-strong
+background.solid: $inherited.colors.background.step-2
+z-index: 0
 
-/-- end: front
+-- ftd.column:
+width: fill-container
+height: fill-container
+anchor: parent
+left.px: 0
+top.px: 0
+background.image: $bg-image
+z-index: 1
+
+-- end: ftd.column
+
+-- ftd.image:
+if: { front.qr-code != NULL }
+src: $front.qr-code
+width.fixed.px: 64
+height.fixed.px: 64
+anchor: parent
+right.px: 12
+top.px: 12
+z-index: 2
+
+-- ftd.column:
+padding-left.px: 94
+align-content: left
+width: fill-container
+
+-- ftd.text: $front.name
+role: $inherited.types.heading-medium
+color: $inherited.colors.text
+
+-- ftd.text: $front.title
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+padding-left.px: 2
+
+-- ftd.column:
+width.fixed.percent: 70
+spacing.fixed.px: 8
+margin-top.px: 34
+
+-- ftd.row:
+if: { front.phone-no != NULL }
+spacing.fixed.px: 16
+
+-- ftd.image:
+src: $assets.files.assets.phone-icon.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: $front.phone-no
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { front.email != NULL }
+spacing.fixed.px: 16
+
+-- ftd.image:
+src: $assets.files.assets.email-icon.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: $front.email
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { front.website != NULL }
+spacing.fixed.px: 16
+
+-- ftd.image:
+src: $assets.files.assets.web-icon.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: $front.website
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { front.address != NULL }
+spacing.fixed.px: 16
+
+-- ftd.image:
+src: $assets.files.assets.map-icon.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- ftd.text: $front.address
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: front
 
 
 
@@ -64,7 +191,7 @@ optional string website:
 
 
 
-/-- component back:
+-- component back:
 optional caption name:
 optional string company-name:
 optional string title:
@@ -77,9 +204,47 @@ optional string company-slogan:
 optional ftd.image-src qr-code:
 optional string website:
 
-;; <YOUR IMPLEMENTATION HERE>
+-- ftd.column:
+width.fixed.px: 600
+height.fixed.px: 297
+spacing.fixed.px: 10
+background.solid: $inherited.colors.background.step-2
+padding-vertical.px: 34
+border-width.px: 1
+border-color: $inherited.colors.border-strong
+z-index: 0
 
-/-- end: back
+-- ftd.column:
+width: fill-container
+height: fill-container
+anchor: parent
+left.px: 0
+top.px: 0
+background.image: $bg-image
+z-index: 1
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+height: fill-container
+align-content: center
+spacing.fixed.px: 8
+
+-- ftd.image: $back.logo
+if: { back.logo != NULL }
+width.fixed.px: 250
+
+-- ftd.text: $back.company-slogan
+if: { back.company-slogan != NULL }
+role: $inherited.types.copy-regular
+color: $inherited.colors.text
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: back
 
 
 
@@ -106,3 +271,8 @@ logo: $assets.files.assets.ipsum-logo.svg
 \-- green-leaf-card.back:
 logo: $assets.files.assets.ipsum-logo.svg
 company-slogan: If you can type you can code
+
+-- ftd.background-image bg-image:
+src: $assets.files.assets.background-image.png
+repeat: no-repeat
+background-size: cover
