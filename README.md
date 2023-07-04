@@ -1,6 +1,6 @@
 # Overview
 
-[<repo_name>](https://<user_name>.github.io/<repo_name>) will help you create your beautiful business card in no time.
+[green-leaf-card](https://gsalunke.github.io/green-leaf-card) will help you create your beautiful business card in no time.
 
 It provides out-of-the-box documentation features that can be used to create any
 kind of business card of your choice.
