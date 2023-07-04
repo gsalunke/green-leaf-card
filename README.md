@@ -11,7 +11,7 @@ kind of business card of your choice.
 
 ## Get Rolling
 
-[Click here](https://fastn-community.github.io/business-card/) to learn how to use this template.
+[Click here](https://gsalunke.github.io/green-leaf-card) to learn how to use this package.
 
 # [Dive into the Docs](https://fastn-community.github.io/business-card/)
 
