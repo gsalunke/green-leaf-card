@@ -66,6 +66,7 @@ optional string website:
 
 -- ftd.column:
 width.fixed.px: 600
+width if { ftd.device == "mobile" }: fill-container
 height.fixed.px: 297
 spacing.fixed.px: 10
 padding-vertical.px: 34
@@ -206,6 +207,7 @@ optional string website:
 
 -- ftd.column:
 width.fixed.px: 600
+width if { ftd.device == "mobile" }: fill-container
 height.fixed.px: 297
 spacing.fixed.px: 10
 background.solid: $inherited.colors.background.step-2
